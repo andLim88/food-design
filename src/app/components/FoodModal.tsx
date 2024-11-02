@@ -1,16 +1,30 @@
+// FoodModal.tsx
 import React from 'react';
-import { Restaurant } from '@/types';
+import { Restaurant, OrderItem } from './types';
 
 interface FoodModalProps {
   food: Restaurant | null;
   quantity: number;
   onQuantityChange: (quantity: number) => void;
   onClose: () => void;
-  onSubmit: () => void;
+  onSubmit: (item: OrderItem) => void;
 }
 
 const FoodModal: React.FC<FoodModalProps> = ({ food, quantity, onQuantityChange, onClose, onSubmit }) => {
   if (!food) return null;
+
+  const handleAddToOrder = () => {
+    if (food) {
+      const newItem: OrderItem = {
+        id: food.id,
+        name: food.name,
+        price: food.price * quantity,
+        quantity,
+        image: food.image,
+      };
+      onSubmit(newItem);
+    }
+  };
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -33,7 +47,7 @@ const FoodModal: React.FC<FoodModalProps> = ({ food, quantity, onQuantityChange,
         </div>
         <div className="flex justify-between mt-4">
           <button onClick={onClose} className="text-gray-500">Close</button>
-          <button onClick={onSubmit} className="bg-pink-500 text-white rounded-lg px-4 py-2">Add to Order</button>
+          <button onClick={handleAddToOrder} className="bg-pink-500 text-white rounded-lg px-4 py-2">Add to Order</button>
         </div>
       </div>
     </div>

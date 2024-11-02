@@ -13,6 +13,7 @@ export interface Restaurant {
     name: string;
     quantity: number;
     price: number;
+    image: string; 
   }
   
   export interface User {

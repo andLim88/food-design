@@ -1,4 +1,6 @@
-"use client"
+// FoodDelivery.tsx
+
+"use client";
 import React, { useState } from 'react';
 import { Search, Filter, ShoppingCart } from 'lucide-react';
 import mockData from './data/mockData.json';
@@ -18,11 +20,12 @@ const FoodDelivery: React.FC = () => {
 
   const categories: CategoryButton[] = [
     { id: '1', label: 'Surprise me!', icon: <ShoppingCart className="w-4 h-4" /> },
-    ...mockData.categories.slice(1)
+    ...mockData.categories.slice(1),
   ];
+
   const userData = {
     name: mockData.user.name,
-    address: mockData.user.address
+    address: mockData.user.address,
   };
 
   const CategoryButton: React.FC<{ category: CategoryButton }> = ({ category }) => (
@@ -44,7 +47,11 @@ const FoodDelivery: React.FC = () => {
         setOrderItems(
           orderItems.map((item) =>
             item.id === selectedFood.id
-              ? { ...item, quantity: item.quantity + quantity, price: item.price + quantity * selectedFood.price }
+              ? {
+                  ...item,
+                  quantity: item.quantity + quantity,
+                  price: item.price + quantity * selectedFood.price,
+                }
               : item
           )
         );
@@ -56,6 +63,7 @@ const FoodDelivery: React.FC = () => {
             name: selectedFood.name,
             quantity,
             price: quantity * selectedFood.price,
+            image: selectedFood.image, // Pastikan menambahkan field image di sini
           },
         ]);
       }
@@ -87,10 +95,8 @@ const FoodDelivery: React.FC = () => {
             </button>
           </div>
 
-          {/* Promo Banner */}
-          <Banner/>
+          <Banner />
 
-          {/* Categories */}
           <div className="mb-8">
             <h2 className="text-xl font-semibold text-black mb-4">Restaurants</h2>
             <p className="text-black mb-4">Select category you'd like to see from</p>
@@ -103,13 +109,14 @@ const FoodDelivery: React.FC = () => {
             {/* Restaurant Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {mockData.restaurants
-                .filter((restaurant) =>
-                  restaurant.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-                  (restaurant.id === selectedCategory || selectedCategory === '1')
+                .filter(
+                  (restaurant) =>
+                    restaurant.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+                    (restaurant.id === selectedCategory || selectedCategory === '1')
                 )
                 .map((restaurant) => (
-                  <RestaurantCard 
-                    key={restaurant.id} 
+                  <RestaurantCard
+                    key={restaurant.id}
                     restaurant={restaurant}
                     onSelect={(restaurant) => {
                       setSelectedFood(restaurant);
@@ -122,7 +129,7 @@ const FoodDelivery: React.FC = () => {
         </div>
       </div>
 
-      <OrderSummary orderItems={orderItems}    user={userData} />
+      <OrderSummary orderItems={orderItems} setOrderItems={setOrderItems} user={userData} />
 
       <FoodModal
         food={selectedFood}
