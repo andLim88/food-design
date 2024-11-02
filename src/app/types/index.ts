@@ -28,5 +28,5 @@ export interface Restaurant {
   export interface CategoryButton {
     id: string;
     label: string;
-    icon?: JSX.Element;
+    icon: string; 
   }

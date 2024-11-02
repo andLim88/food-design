@@ -1,11 +1,11 @@
 {
   "categories": [
-    { "id": "1", "label": "Surprise me!" },
-    { "id": "2", "label": "Dessert" },
-    { "id": "3", "label": "Italian food" },
-    { "id": "4", "label": "Fast food" },
-    { "id": "5", "label": "Asian food" },
-    { "id": "6", "label": "Barbecue" }
+    { "id": "1", "label": "Surprise me!", "icon": "faStar" },
+    { "id": "2", "label": "Dessert", "icon": "faIceCream" },
+    { "id": "3", "label": "Italian food", "icon": "faPizzaSlice" },
+    { "id": "4", "label": "Fast food", "icon": "faHamburger" },
+    { "id": "5", "label": "Asian food", "icon": "faRice" },
+    { "id": "6", "label": "Barbecue", "icon": "faGrill" }
   ],
   "restaurants": [
     {

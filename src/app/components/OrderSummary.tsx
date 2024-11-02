@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { OrderItem } from '@/types';
 import SuccessModal from './SuccessModal';
+import Icon from './Icon';
+import { faCoffee, faUser } from '@fortawesome/free-solid-svg-icons';
 
 interface OrderSummaryProps {
   orderItems: OrderItem[];
@@ -31,14 +33,14 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ orderItems, setOrderItems, 
   };
 
   return (
-    <div className="w-80 bg-white rounded-2xl shadow-lg p-6">
+    <div className="bg-white rounded-2xl shadow-lg p-6">
       {/* User Info */}
       {user && (
-        <div className="flex items-center gap-5 mb-6">
-          <div className="w-8 h-8 bg-gray-200 rounded-full overflow-hidden">
-            <img src="/api/placeholder/32/32" alt={user.name} className="w-full h-full object-cover" />
+        <div className="flex items-center gap-5 justify-between mb-6">
+          <div className="flex items-center gap-2">
+            <Icon icon={faUser} className='text-pink-500' />
+            <h3 className="font-medium text-sm">{user.name}</h3>
           </div>
-          <h3 className="font-medium text-sm">{user.name}</h3>
           <p className="text-wrap">{user.address}</p>
         </div>
       )}
