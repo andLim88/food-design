@@ -1,0 +1,47 @@
+{
+  "categories": [
+    { "id": "1", "label": "Surprise me!" },
+    { "id": "2", "label": "Dessert" },
+    { "id": "3", "label": "Italian food" },
+    { "id": "4", "label": "Fast food" },
+    { "id": "5", "label": "Asian food" },
+    { "id": "6", "label": "Barbecue" }
+  ],
+  "restaurants": [
+    {
+      "id": "1",
+      "name": "Strawberry's panna cotta",
+      "price": 9.5,
+      "location": "Bakery on Preston St",
+      "rating": 5.0,
+      "reviews": 102,
+      "image": "/images/strawberry.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Egg plant salad",
+      "price": 11.5,
+      "location": "Georgian restaurant",
+      "rating": 5.0,
+      "reviews": 92,
+      "image": "/images/salad.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Pumpkin soup",
+      "price": 12,
+      "location": "Friend's Cafe",
+      "rating": 5.0,
+      "reviews": 88,
+      "image": "/images/pumpkin.jpg"
+    }
+  ],
+  "user": {
+    "name": "Yulia K.",
+    "address": "8391 Rigo St Celena, Delaware",
+    "payment": {
+      "lastFour": "4523",
+      "expiry": "12/24"
+    }
+  }
+}
