@@ -33,7 +33,6 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ orderItems, setOrderItems, 
 
   return (
     <div className="bg-white rounded-2xl shadow-lg p-6">
-      {/* User Info */}
       {user && (
         <div className="flex items-center gap-5 justify-between mb-6">
           <div className="flex items-center gap-2">
@@ -62,7 +61,6 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ orderItems, setOrderItems, 
         ))}
       </div>
 
-      {/* Order Details */}
       <div className="space-y-3 border-t border-gray-100 pt-4">
         <div className="flex items-center justify-between text-gray-500">
           <span>Delivery</span>
