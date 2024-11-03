@@ -41,7 +41,10 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ orderItems, setOrderItems, 
             <Icon icon={faUser} className='text-pink-500' />
             <h3 className="font-medium text-sm">{user.name}</h3>
           </div>
+          <div className="flex w-1/2 gap-2">
+          <Icon icon={faUser} className='text-pink-500 mt-2' />
           <p className="text-wrap">{user.address}</p>
+          </div>
         </div>
       )}
 

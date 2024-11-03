@@ -1,4 +1,3 @@
-// FoodModal.tsx
 import React from 'react';
 import { Restaurant, OrderItem } from './types';
 

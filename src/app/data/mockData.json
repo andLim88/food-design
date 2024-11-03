@@ -4,8 +4,8 @@
     { "id": "2", "label": "Dessert", "icon": "faIceCream" },
     { "id": "3", "label": "Italian food", "icon": "faPizzaSlice" },
     { "id": "4", "label": "Fast food", "icon": "faHamburger" },
-    { "id": "5", "label": "Asian food", "icon": "faRice" },
-    { "id": "6", "label": "Barbecue", "icon": "faGrill" }
+    { "id": "5", "label": "Asian food", "icon": "faBowlRice" },
+    { "id": "6", "label": "Barbecue", "icon": "faFire" }
   ],
   "restaurants": [
     {

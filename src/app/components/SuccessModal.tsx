@@ -9,8 +9,8 @@ interface SuccessModalProps {
 const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, message }) => {
   useEffect(() => {
     if (isOpen) {
-      const timer = setTimeout(onClose, 3000); // Automatically close after 3 seconds
-      return () => clearTimeout(timer); // Clear timeout if modal is closed early
+      const timer = setTimeout(onClose, 3000); 
+      return () => clearTimeout(timer); 
     }
   }, [isOpen, onClose]);
 
