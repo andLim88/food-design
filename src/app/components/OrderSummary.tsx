@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { OrderItem } from '@/types';
 import SuccessModal from './SuccessModal';
 import Icon from './Icon';
-import { faCoffee, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 interface OrderSummaryProps {
   orderItems: OrderItem[];
@@ -15,20 +15,19 @@ interface OrderSummaryProps {
 
 const OrderSummary: React.FC<OrderSummaryProps> = ({ orderItems, setOrderItems, user }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [persons, setPersons] = useState(2);
-  const [selectedCard, setSelectedCard] = useState('Mastercard •••• 8973'); // Example card info
+  // const [persons, setPersons] = useState(2);
+  const [selectedCard] = useState('Mastercard •••• 8973');
 
   const calculateTotal = (items: OrderItem[]): number => {
     return items.reduce((sum, item) => sum + item.price, 0);
   };
 
   const handleOrderSubmit = () => {
-    setOrderItems([]); // Reset the order items
-    setIsModalOpen(true); // Show success modal
+    setOrderItems([]); 
+    setIsModalOpen(true); 
   };
 
   const handleCardChange = () => {
-    // This function could open a modal or redirect to a payment method selection page
     alert('Open payment method selection');
   };
 
@@ -74,7 +73,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ orderItems, setOrderItems, 
         </div>
       </div>
 
-      {/* Payment Method */}
+
       <div className="flex items-center justify-between bg-gray-50 rounded-xl p-3 mt-6">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8">
@@ -87,7 +86,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ orderItems, setOrderItems, 
         </button>
       </div>
 
-      {/* Submit Button */}
+
       <button
         onClick={handleOrderSubmit}
         className="w-full bg-pink-500 text-white rounded-xl py-3 font-medium hover:bg-pink-600 transition-colors mt-6"
@@ -95,7 +94,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ orderItems, setOrderItems, 
         Submit Order
       </button>
 
-      {/* Success Modal */}
+  
       <SuccessModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

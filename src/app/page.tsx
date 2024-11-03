@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
-import { Search, Filter, ShoppingCart } from 'lucide-react';
+import { Search, Filter} from 'lucide-react';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faIceCream, faPizzaSlice, faHamburger, faBowlRice, faFire } from '@fortawesome/free-solid-svg-icons';
 import mockData from './data/mockData.json';
@@ -11,7 +12,7 @@ import OrderSummary from './components/OrderSummary';
 import FoodModal from './components/FoodModal';
 import Banner from './components/Banner';
 
-const iconMap: { [key: string]: any } = {
+const iconMap: Record<string, IconDefinition> = {
   faStar,
   faIceCream,
   faPizzaSlice,
@@ -19,6 +20,7 @@ const iconMap: { [key: string]: any } = {
   faBowlRice,
   faFire,
 };
+
 
 const FoodDelivery: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('1');
